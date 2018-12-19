@@ -14,7 +14,7 @@ window.onload = function () {
     */
 
 
-    /*       POST Request
+
     const xhr = new XMLHttpRequest();
     const url = '/route';
     const data = JSON.stringify({
@@ -29,5 +29,5 @@ window.onload = function () {
     xhr.open('POST', url);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(data);
-    */
+
 };

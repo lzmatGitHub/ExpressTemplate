@@ -7,7 +7,7 @@ const express = require('express');
 // Instantiate the app here
 const app = express();
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static('public'));
 // to get res.body in json format of POST request
