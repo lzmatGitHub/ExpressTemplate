@@ -3,10 +3,14 @@ const router = express.Router();
 
 module.exports = router;
 
-router.post('/', (req, res, next) => {
+const firstTodo = (req, res, next) => {
+    console.log("This is from a pre-function:");
+    console.log(req.body);
+    next();
+};
+router.use('/', firstTodo, (req, res, next) => {
     //In addition to .send(), .json() can be used to explicitly send JSON-formatted responses. 
     //.json() sends any JavaScript object passed into it.
-    console.log(req.body);
     res.status(200).json(req.body);
 });
 

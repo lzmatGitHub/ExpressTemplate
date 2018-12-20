@@ -13,6 +13,11 @@ app.use(express.static('public'));
 // to get res.body in json format of POST request
 app.use(express.json());
 
+app.use((req, res, next) => {
+    console.log(req.method + ' Request Received !');
+    next();
+});
+
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/html/index.html');
 });
