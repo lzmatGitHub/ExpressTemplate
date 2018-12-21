@@ -16,18 +16,21 @@ window.onload = function () {
 
 
     const xhr = new XMLHttpRequest();
-    const url = '/route';
+    const url = '/findCard/2';
+    /*
     const data = JSON.stringify({
         value: 'I want to find this data'
     });
+    */
     xhr.responseType = 'json';
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             console.log(xhr.response);
         }
     };
-    xhr.open('POST', url);
+    //xhr.open('POST', url);
+    xhr.open('GET', url);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.send(data);
-
+    //xhr.send(data);
+    xhr.send();
 };
