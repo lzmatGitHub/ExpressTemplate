@@ -16,7 +16,7 @@ window.onload = function () {
 
 
     const xhr = new XMLHttpRequest();
-    const url = '/findCard/2';
+    const url = '/findCard/2/copy';
     /*
     const data = JSON.stringify({
         value: 'I want to find this data'
