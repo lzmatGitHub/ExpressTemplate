@@ -1,4 +1,5 @@
 const express = require('express');
+const sqlite3 = require('sqlite3');
 const router = express.Router();
 const nestedRouter = express.Router({
     mergeParams: true
@@ -13,6 +14,36 @@ var cards = [{
     id: 2,
     name: 'Card 2'
 }];
+
+const db = new sqlite3.Database('./db.sqlite');
+
+/*
+for (let i = 0; i < cards.length; i++) {
+    db.run(
+        "INSERT INTO cards (id, name) VALUES (NULL, $name)",
+        {$name: cards[i].name},
+        function(err){
+            if(err){
+                console.log(err);
+                return;
+            }
+            console.log(this.lastID); 
+        });
+}
+db.run(
+    "CREATE TABLE cards (id INTEGER PRIMARY KEY, name TEXT NOT NULL)",
+    err => {
+        console.log(err);
+        return;
+    }
+);
+db.run(
+    "DROP TABLE IF EXISTS cards",
+    err => {
+        console.log(err);
+    }
+);
+*/
 
 /*
 router.use('/:id', (req, res, next) => {
